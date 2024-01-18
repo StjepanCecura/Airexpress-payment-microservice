@@ -1,0 +1,19 @@
+version: "3"
+services:
+  receipts_service:
+    build: ./
+    container_name: receipts_service_prod
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    env_file:
+      - ./.env
+    environment:
+      - NODE_ENV=production
+    networks:
+      - network
+    command: npm run start
+networks:
+  network:
+    name: api_network
+    external: true

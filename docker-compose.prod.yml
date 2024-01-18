@@ -1,8 +1,8 @@
 version: "3"
 services:
-  payment_service:
+  receipts_service:
     build: ./
-    container_name: payment_service_prod
+    container_name: receipts_service_prod
     volumes:
       - ./:/app
       - /app/node_modules

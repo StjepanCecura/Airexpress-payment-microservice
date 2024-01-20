@@ -11,6 +11,7 @@ const getCartByCustomerIdRoute = require("./routes/getCartByCustomerIdRoute");
 const removeProductFromCartRoute = require("./routes/removeProductFromCartRoute");
 const addShippingAddresRoute = require("./routes/addShippingAddressRoute");
 const createOrderRoute = require("./routes/createOrderRoute");
+const createPaymentSessionRoute = require("./routes/createPaymentSessionRoute");
 
 dotenv.config();
 
@@ -35,6 +36,7 @@ app.post("/addProductToCart", addProductToCartRoute);
 app.post("/removeProductFromCart", removeProductFromCartRoute);
 app.post("/addShippingAddress", addShippingAddresRoute);
 app.post("/createOrder", createOrderRoute);
+app.post("/createCheckoutSession", createPaymentSessionRoute);
 
 app.listen(port, () => {
   console.log(`Receipt service on port: ${port}`);

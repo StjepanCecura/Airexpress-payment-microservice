@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
         },
         version,
         shipmentState: "Pending",
-        paymentState: "Pending",
+        paymentState: "Paid",
       },
     });
 

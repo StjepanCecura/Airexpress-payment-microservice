@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
       line_items: lineItems,
       mode: "payment",
       success_url: "http://localhost:3000/payment-success",
-      cancel_url: "http://localhost:3000/payment-error",
+      cancel_url: "http://localhost:3000/payment-cancel",
     });
 
     res.status(200).send({ id: session.id });

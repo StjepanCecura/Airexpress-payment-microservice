@@ -49,7 +49,7 @@ module.exports = async (req, res) => {
       });
     });
 
-    res.status(200).send({ success: true, newQuantities });
+    res.status(200).send({ success: true });
   } catch (error) {
     console.log(`Error creating order! ${error}`);
     res.status(503).send({ error });

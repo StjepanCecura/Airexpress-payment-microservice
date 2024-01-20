@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
       res.status(403).send({ message: "Not logged in!" });
     }
   } catch (error) {
-    console.log(`Error while creating cart! ${error}`);
+    console.log(`Error while creating cart for customer! ${error}`);
     res.status(503).send({ error: error });
   }
 };

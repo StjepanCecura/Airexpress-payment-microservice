@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
 
     res.status(200).send({ cartId: createdCart.body.id });
   } catch (error) {
-    console.log(`Error while creating cart! ${error}`);
+    console.log(`Error while getting cart by customerId! ${error}`);
     if (error.code == 404) res.status(200).send({ cartId: null });
     else res.status(503).send({ error: error });
   }

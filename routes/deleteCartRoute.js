@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
       success: true,
     });
   } catch (error) {
-    console.log(`Error while fetching cart data by card id! error:${error}`);
+    console.log(`Error while deleting cart! error:${error}`);
     res.status(400).send({ success: false, error });
   }
 };

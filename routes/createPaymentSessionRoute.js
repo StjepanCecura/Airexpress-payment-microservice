@@ -29,6 +29,7 @@ module.exports = async (req, res) => {
 
     res.status(200).send({ id: session.id });
   } catch (error) {
+    console.log("Error creating session\n", error);
     res.status(502).send({ id: null });
   }
 };

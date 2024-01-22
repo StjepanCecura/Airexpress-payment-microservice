@@ -1,6 +1,3 @@
-const PDFDocument = require("pdfkit");
-const fs = require("fs");
-
 const formatProductsInCart = (products) => {
   const formatedProducts = [];
   products.forEach((product) => {

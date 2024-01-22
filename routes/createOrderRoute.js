@@ -1,5 +1,5 @@
 const { commercetoolsClient } = require("../utils/commercetools.js");
-const { generateReceipt } = require("../utils/functions.js");
+const { sendReceipt } = require("../utils/functions.js");
 
 module.exports = async (req, res) => {
   try {
@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
       },
     });
 
-    generateReceipt(order);
+    sendReceipt(order);
 
     const lineItems = order.body.lineItems;
 

@@ -59,7 +59,7 @@ const sendReceipt = async (order) => {
     },
     body: JSON.stringify({ order }),
   })
-    .then((response) => console.log(response))
+    .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => console.error("Error:", error));
 };

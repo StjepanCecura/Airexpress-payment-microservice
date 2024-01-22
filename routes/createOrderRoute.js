@@ -1,4 +1,5 @@
 const { commercetoolsClient } = require("../utils/commercetools.js");
+const { generateReceipt } = require("../utils/functions.js");
 
 module.exports = async (req, res) => {
   try {
@@ -18,6 +19,8 @@ module.exports = async (req, res) => {
         paymentState: "Paid",
       },
     });
+
+    generateReceipt(order);
 
     const lineItems = order.body.lineItems;
 

@@ -1,3 +1,6 @@
+const PDFDocument = require("pdfkit");
+const fs = require("fs");
+
 const formatProductsInCart = (products) => {
   const formatedProducts = [];
   products.forEach((product) => {
@@ -51,7 +54,26 @@ const verifyJWT = async (token) => {
   return response;
 };
 
+const generateReceipt = async (order) => {
+  console.log(`Order `, order);
+
+  const response = await fetch("http://mail_service:4003/sendReceipt", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ order }),
+  })
+    .then((response) => console.log(response))
+    .then((data) => console.log(data))
+    .catch((error) => console.error("Error:", error));
+
+  // At this point, pdfBuffer contains the PDF data
+  // You can now send this buffer to the other service
+};
+
 module.exports = {
   formatProductsInCart,
   verifyJWT,
+  generateReceipt,
 };

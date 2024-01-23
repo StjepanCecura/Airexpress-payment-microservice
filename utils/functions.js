@@ -51,7 +51,21 @@ const verifyJWT = async (token) => {
   return response;
 };
 
+const sendReceipt = async (order) => {
+  const response = await fetch("http://mail_service:4003/sendReceipt", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ order }),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error("Error:", error));
+};
+
 module.exports = {
   formatProductsInCart,
   verifyJWT,
+  sendReceipt,
 };
